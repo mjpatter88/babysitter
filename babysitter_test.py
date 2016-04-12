@@ -30,5 +30,17 @@ class TestBabysitter(unittest.TestCase):
         total = babysitter.calculate(5, 6, 4)
         self.assertEquals(total, 124, "Working five to four with bedtime at six should be $124.")
 
+    def test__calculate_returns_sixtyfour_for_working_midnight_to_four_with_two_bedtime(self):
+        total = babysitter.calculate(12, 2, 4)
+        self.assertEquals(total, 64, "Working midnight to four with bedtime at two should be $64.")
+
+    def test__calculate_returns_fiftysix_for_working_10_to_two_with_one_bedtime(self):
+        total = babysitter.calculate(10, 1, 2)
+        self.assertEquals(total, 56, "Working ten to two with bedtime at one should be $56.")
+
+    def test__calculate_returns_sixtyfour_for_working_10_to_two_with_eleven_bedtime(self):
+        total = babysitter.calculate(10, 11, 2)
+        self.assertEquals(total, 52, "Working ten to two with bedtime at eleven should be $52.")
+
 if __name__ == "__main__":
     unittest.main()
