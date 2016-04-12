@@ -26,6 +26,9 @@ class TestBabysitter(unittest.TestCase):
         total = babysitter.calculate(10, 10, 12)
         self.assertEquals(total, 16, "Working two hours before midnight should be $16.")
 
+    def test__calculate_returns_124_for_working_five_to_four_with_bedtime_at_six(self):
+        total = babysitter.calculate(5, 6, 4)
+        self.assertEquals(total, 124, "Working five to four with bedtime at six should be $124.")
 
 if __name__ == "__main__":
     unittest.main()
